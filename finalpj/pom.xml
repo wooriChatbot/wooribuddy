@@ -12,6 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>board</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging> <!-- war -->
 	<name>board</name>
 	<description>게시판</description>
 	<properties>
