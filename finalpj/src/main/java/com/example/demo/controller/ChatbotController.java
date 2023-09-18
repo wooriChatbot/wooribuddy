@@ -76,7 +76,7 @@ public class ChatbotController {
 			jsonResponse = objectMapper.readTree(QAresponse);
 			String result_answer = jsonResponse.get("answer").asText();
 			String best_context = jsonResponse.get("best_context").asText();
-			String user_question = jsonResponse.get("question").asText();
+			String user_question = jsonResponse.get("aaquestion").asText();
 			// System.out.println(question);
 
 			result_answer = chatbotService.decodeUnicode(result_answer);
@@ -121,16 +121,16 @@ public class ChatbotController {
 
 			try {
 
-				JSONObject jsonResponse1 = new JSONObject(question);
-				String answer = jsonResponse1.getString("answer");
-				String best_context = jsonResponse1.getString("best_context");
+				//JSONObject jsonResponse1 = new JSONObject(question);
+				//String answer = jsonResponse1.getString("answer");
+				//String best_context = jsonResponse1.getString("best_context");
 
 				// GPT 답변보완 요청
 				JSONObject jsonRequest2 = new JSONObject();
-				jsonRequest2.put("answer", answer); // 수정된 부분
-				jsonRequest2.put("best_context", best_context); // 수정된 부분
-				jsonRequest2.put("question", question); // 수정된 부분
-				String GPTresponse = chatbotService.getGPTChatbotResponse(answer, best_context, question);
+				//jsonRequest2.put("answer", answer); // 수정된 부분
+				//jsonRequest2.put("best_context", best_context); // 수정된 부분
+				jsonRequest2.put("aaquestion", question); // 수정된 부분
+				String GPTresponse = chatbotService.getGPTChatbotResponse(question);
 				model.addAttribute("GPTresponse", GPTresponse);
 
 				// Add chatbot's response to chat messages
