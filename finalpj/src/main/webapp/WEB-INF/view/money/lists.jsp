@@ -20,7 +20,7 @@
       <td>금액</td>
       <td>분류</td>
       <td></td>
-      <td></td>
+
    </tr>
    <c:set var="total" value="0" />
    <c:set var="income_total" value="0" />
@@ -55,7 +55,6 @@
       <td>총액: ${total}</td>
       <td>수입 총액: ${income_total}</td>
       <td>지출 총액: ${expense_total}</td>
-      <td></td>
       <td></td>
    </tr>
 </table>
