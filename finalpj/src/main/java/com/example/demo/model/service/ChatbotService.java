@@ -72,17 +72,15 @@ public class ChatbotService {
 		// Create a JSON request and send it to the QA model
 		JSONObject jsonRequest = new JSONObject();
 		jsonRequest.put("question", question);
-		String response = sendPostRequest("http://127.0.0.1:5000/model_response", jsonRequest.toString());
+		String response = sendPostRequest("http://15.165.250.251:5000/model_response", jsonRequest.toString());
 		return response;
 	}
 
-	public String getGPTChatbotResponse(String answer,String best_context,String question) {
+	public String getGPTChatbotResponse(String question) {
 		// Create a JSON request and send it to the GPT model
 		JSONObject jsonRequest = new JSONObject();
-		jsonRequest.put("answer", answer);
-		jsonRequest.put("best_context", best_context);
 		jsonRequest.put("question", question);
-		String response = sendPostRequest("http://127.0.0.1:5000/gpt_response", jsonRequest.toString());
+		String response = sendPostRequest("http://15.165.250.251:5000/gpt_response", jsonRequest.toString());
 
 		ObjectMapper objectMapper = new ObjectMapper();
 		JsonNode jsonResponse;
